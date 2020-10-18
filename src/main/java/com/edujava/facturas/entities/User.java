@@ -1,4 +1,4 @@
-package edu.javaproweb.facturas.entities;
+package com.edujava.facturas.entities;
 
 import java.io.Serializable;
 
