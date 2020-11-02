@@ -15,6 +15,7 @@ import com.edujava.facturas.services.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserResource {
+	
 	@Autowired
 	private UserService service; 
 	

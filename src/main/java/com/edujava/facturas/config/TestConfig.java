@@ -21,11 +21,12 @@ public class TestConfig implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		//--Instanciamos la Clase User--//
-		User u1 = new User(null, "Eduardo", "eduardo@gmail.com", "777", "123");
-		User u2 = new User(null, "Nieves", "nieves@gmail.com", "888", "456");
+		User u1 = new User(null, "Edu", "edu@gmail.com", "777", "123");
+		User u2 = new User(null, "Nie", "nieves@gmail.com", "888", "456");
+		User u3 = new User(null, "Ana", "ana@gmail.com", "999", "789");
 		
 		//--Salvamos los Datos--//
-		userRepository.saveAll(Arrays.asList(u1,u2));
+		userRepository.saveAll(Arrays.asList(u1,u2,u3));
 		
 	}
 }
