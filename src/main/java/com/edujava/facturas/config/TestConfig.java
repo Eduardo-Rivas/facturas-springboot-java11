@@ -8,9 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.edujava.facturas.entities.Category;
 import com.edujava.facturas.entities.Order;
 import com.edujava.facturas.entities.User;
 import com.edujava.facturas.entities.enums.OrderStatus;
+import com.edujava.facturas.repositories.CategoryRepository;
 import com.edujava.facturas.repositories.OrderRepository;
 import com.edujava.facturas.repositories.UserRepository;
 
@@ -24,8 +26,20 @@ public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private OrderRepository orderRepository;
 	
+
+	@Autowired
+	private CategoryRepository CategoryRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
+
+		//--Instanciamos las Categorias de Productos--//
+		Category cat1 = new Category(null, "Electronicos");
+		Category cat2 = new Category(null, "Libros");
+		Category cat3 = new Category(null, "Computadoras");
+		
+		//--Salvamos los Datos de Categorias--//
+		CategoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
 		
 		//--Instanciamos la Clase User--//
 		User u1 = new User(null, "Edu", "edu@gmail.com", "777", "123");
