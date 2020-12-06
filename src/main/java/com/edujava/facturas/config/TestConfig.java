@@ -53,6 +53,17 @@ public class TestConfig implements CommandLineRunner {
 		categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 		
+		//--Asociacion de Claves Extranjeras Productos-Catgorias--//
+		p1.getCategories().add(cat2);
+		p2.getCategories().add(cat1);
+		p2.getCategories().add(cat3);
+		p3.getCategories().add(cat3);
+		p4.getCategories().add(cat3);
+		p5.getCategories().add(cat2);
+		
+		//--Salvamos Nuevamente la Tabla Producto--//
+		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
 		//--Instanciamos la Clase User--//
 		User u1 = new User(null, "Edu", "edu@gmail.com", "777", "123");
 		User u2 = new User(null, "Nie", "nieves@gmail.com", "888", "456");
