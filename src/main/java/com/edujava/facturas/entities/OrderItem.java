@@ -6,6 +6,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import com.edujava.facturas.entities.pk.OrderItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_Order_Item")
@@ -15,7 +16,7 @@ public class OrderItem implements Serializable{
 	
 	//--Clave Primaria--//
 	@EmbeddedId
-	private OrderItemPK id;
+	private OrderItemPK id = new OrderItemPK();
 	
 	private Integer quantity;
 	private Double price;
@@ -33,6 +34,7 @@ public class OrderItem implements Serializable{
 	}
 	
 	//--Getters y Setter Order--//
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOreder();
 	}
