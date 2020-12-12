@@ -26,7 +26,7 @@ public class Category implements Serializable{
 	
 	//--Asociación Entidades Categorias-Productos--//
 	//--JsonIgnor para Romper el Loop Infinito--//
-	@JsonIgnore 
+	@JsonIgnore  
 	@ManyToMany(mappedBy = "categories")
 	private Set<Product> products = new HashSet<>();
 	
